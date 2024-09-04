@@ -35,7 +35,7 @@ resource "aws_route_table" "swayam_dev_route_table" {
 
   route {
     cidr_block = "0.0.0.0/0"
-    gateway_id = aws_internet_gateway.swayam_dev_vpc.id
+    gateway_id = aws_internet_gateway.swayam_dev_igw.id
   }
 
   tags = {
