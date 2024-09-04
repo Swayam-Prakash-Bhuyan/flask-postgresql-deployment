@@ -86,7 +86,7 @@ resource "aws_security_group" "swayam_dev_node_sg" {
   }
 }
 
-resource "aws_eks_cluster" "devopsshack" {
+resource "aws_eks_cluster" "swayam_dev" {
   name     = "swayam-dev-cluster"
   role_arn = aws_iam_role.swayam_dev_cluster_role.arn
 
@@ -136,7 +136,7 @@ EOF
 }
 
 resource "aws_iam_role_policy_attachment" "swayam_dev_cluster_role_policy" {
-  role       = aws_iam_role.devopsshack_cluster_role.name
+  role       = aws_iam_role.swayam_dev_cluster_role.name
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
 }
 
