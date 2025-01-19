@@ -8,7 +8,7 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: jenkins
-  namespace: webapps
+  namespace: myapps
 ```
 
 ### Create Role 
@@ -19,7 +19,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: app-role
-  namespace: webapps
+  namespace: myapps
 rules:
   - apiGroups:
         - ""
@@ -63,13 +63,13 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: app-rolebinding
-  namespace: webapps 
+  namespace: myapps 
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
   name: app-role 
 subjects:
-- namespace: webapps 
+- namespace: myapps 
   kind: ServiceAccount
   name: jenkins 
 ```
